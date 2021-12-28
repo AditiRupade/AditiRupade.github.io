@@ -33,6 +33,7 @@
           $.ajax({
             url: $form.attr('action'),
             type: "POST",
+            crossDomain: true,
             data: {
               name: name,
               phone: phone,
