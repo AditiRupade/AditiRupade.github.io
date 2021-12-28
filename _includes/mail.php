@@ -23,11 +23,13 @@
         $content .= "Phone: $phone\n";
         $content .= "Message:\n$message\n";
 
+        $subject = "New contact from $name";
+
         # email headers.
         $headers = "From: $name &lt;$email&gt;";
 
         # Send the email.
-        $success = mail($mail_to, $name, $content, $headers);
+        $success = mail($mail_to, $subject, $content, $headers);
         if ($success) {
             # Set a 200 (okay) response code.
             http_response_code(200);
